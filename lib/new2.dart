@@ -8,9 +8,8 @@ void main() {
 
   String firstname="Gildong ",sirmane="Hong";
   String fullname= firstname+sirmane;
-  var len=fullname.length;
   print(fullname);
-  print('$fullname:$len');
+  print('$fullname:$fullname.length');
 
 
   bool aa=false;
