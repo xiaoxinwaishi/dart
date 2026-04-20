@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:padding="20dp">
+import 'dart:io';
 
-<EditText
-android:id="@+id/editTextName"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:hint="请输入昵称" />
+void main() {
+  String? nickname = stdin.readLineSync(); // 从键盘读取一行输入
 
-<Button
-android:id="@+id/buttonSubmit"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:text="确定" />
+  String displayName;
 
-<TextView
-android:id="@+id/textViewResult"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:text="显示昵称"
-android:textSize="18sp"
-android:marginTop="20dp"/>
+  if (nickname == null || nickname.isEmpty) {
+    displayName = 'guest'; // 如果输入为空，则使用 "guest"
+  } else {
+    displayName = nickname; // 否则，使用用户输入的昵称
+  }
 
-</LinearLayout>
+  print(displayName); // 输出显示名称
+}

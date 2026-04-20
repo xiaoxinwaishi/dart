@@ -1,0 +1,23 @@
+void main() {
+  List<int> statusCodes = [100, 200, 301, 302, 999];
+
+  for (int i = 0; i < statusCodes.length; i++) {
+    int code = statusCodes[i];
+
+    switch (code) {
+      case 100:
+        print("OPEN");
+        break;
+      case 200:
+        print("APPROVED");
+        break;
+      case 301:
+      case 302:
+        print("DENIED with Error");
+        break;
+      case 999:
+        print("unknown status");
+        break;
+    }
+  }
+}
